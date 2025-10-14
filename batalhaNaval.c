@@ -1,27 +1,28 @@
 #include <stdio.h>
 
 int main() {
-    char linha[10] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
-    //1. Criando o Trabuleiro (Matriz 10x10)
+    char colunas[10] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
+
+    // 1. Criando o tabuleiro (matriz 10x10)
     int tabuleiro[10][10];
-    for (int i = 0; i < 10; i++){
-    for (int j = 0; i < 10; j++){
-        tabuleiro[i][j] = 3;  
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            tabuleiro[i][j] = 0;  // inicializa com água
+        }
     }
-}
-    //Posicionando os Navios!
-    //Navio horizontal (linha 3, colunas 3-5)
-    for (int j = 2; i < 3; j++)
-    {
-        tabuleiro [2][j] = 3;
+
+    // 2. Posicionando os navios (valor 3)
+    // Navio horizontal (linha 3, colunas 3-5)
+    for (int j = 2; j <= 4; j++) {
+        tabuleiro[2][j] = 3;
     }
-    //Navio vertical (coluna 7, linhas 5-7)
-    for (int i = 5; i < 8; i++)
-    {
+
+    // Navio vertical (coluna 7, linhas 5-7)
+    for (int i = 4; i <= 6; i++) {
         tabuleiro[i][6] = 3;
     }
-    
-    //Imprimir o tabuleiro
+
+    // 3. Imprimir o tabuleiro
     printf("--- TABULEIRO DE BATALHA NAVAL! ---\n");
 
     // Cabeçalho com letras (A–J)
@@ -30,14 +31,15 @@ int main() {
         printf("%c ", colunas[i]);
     }
     printf("\n");
-    
+
     // Números nas linhas + conteúdo do tabuleiro
     for (int i = 0; i < 10; i++) {
         printf("%-2d", i + 1); // alinha à esquerda (1, 2, 3...)
         for (int j = 0; j < 10; j++) {
-            printf("%d ", tabuleiro[i][j]);
+            printf("%d ", tabuleiro[i][j]);  // água = 0, navio = 3
         }
         printf("\n");
-    
+    }
+
     return 0;
 }
