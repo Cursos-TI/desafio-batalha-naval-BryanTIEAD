@@ -24,6 +24,12 @@ int main() {
     //Imprimir o tabuleiro
     printf("--- TABULEIRO DE BATALHA NAVAL! ---\n");
     
+    // Cabeçalho com letras (A–J)
+    printf("  ");
+    for (int i = 0; i < 10; i++) {
+        printf("%c ", colunas[i]);
+    }
+    printf("\n");
     
     return 0;
 }
