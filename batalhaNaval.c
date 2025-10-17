@@ -3,7 +3,7 @@
 int main() {
     char colunas[10] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
 
-    // 1. Criando o tabuleiro (matriz 10x10)
+    //  Criando o tabuleiro (matriz 10x10)
     int tabuleiro[10][10];
     for (int i = 0; i < 10; i++) {
         for (int j = 0; j < 10; j++) {
@@ -11,7 +11,7 @@ int main() {
         }
     }
 
-    // 2. Posicionando os navios (valor 3)
+    //  Posicionando os navios (valor 3)
     // Navio horizontal (linha 3, colunas 3-5)
     for (int j = 2; j <= 4; j++) {
         tabuleiro[2][j] = 3;
@@ -21,7 +21,13 @@ int main() {
     for (int i = 4; i <= 6; i++) {
         tabuleiro[i][6] = 3;
     }
-
+    //Navio Diagonal principal - (0,0) até (2,2)
+    for (int i = 0; i < 3; i++) {
+        // valida para não sobrepor
+        if (tabuleiro[i][i] == 0) {
+            tabuleiro[i][i] = 3;
+        }
+    }
     // 3. Imprimir o tabuleiro
     printf("--- TABULEIRO DE BATALHA NAVAL! ---\n");
 
