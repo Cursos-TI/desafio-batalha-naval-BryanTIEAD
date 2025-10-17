@@ -21,11 +21,29 @@ int main() {
     for (int i = 4; i <= 6; i++) {
         tabuleiro[i][6] = 3;
     }
+
     //Navio Diagonal principal - (0,0) até (2,2)
     for (int i = 0; i < 3; i++) {
         // valida para não sobrepor
         if (tabuleiro[i][i] == 0) {
             tabuleiro[i][i] = 3;
+        }
+    }
+
+    //Navio  Diagonal principal - (0,0) até (2,2)
+    for (int i = 0; i < 3; i++) {
+        // valida para não sobrepor
+        if (tabuleiro[i][i] == 0) {
+            tabuleiro[i][i] = 3;
+        }
+    }
+
+    //Navio 4 Diagonal secundária - (0,9) até (2,7)
+    for (int i = 0; i < 3; i++) {
+        int linha = i;
+        int coluna = 9 - i;
+        if (tabuleiro[linha][coluna] == 0) {
+            tabuleiro[linha][coluna] = 3;
         }
     }
     // 3. Imprimir o tabuleiro
