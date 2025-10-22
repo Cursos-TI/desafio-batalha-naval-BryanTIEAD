@@ -39,3 +39,16 @@ int main() {
             }
         }
     }
+    // Aplicando habilidade Octaedro em (7,2)
+    for(int i=-2; i<=2; i++){
+        for(int j=-2; j<=2; j++){
+            int x = 7 + i;
+            int y = 2 + j;
+            if(x>=0 && x<LINHA && y>=0 && y<COLUNA){
+                if(i+j >=0 && i+j <=4 && j-i <=2 && i-j <=2){
+                    if(tabuleiro[x][y]!=NAVIO)
+                        tabuleiro[x][y] = HABILIDADE;
+                }
+            }
+        }
+    }
