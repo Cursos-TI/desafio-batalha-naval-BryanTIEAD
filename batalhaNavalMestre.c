@@ -26,3 +26,16 @@ int main() {
             }
         }
     }
+    // Aplicando habilidade Cruz em (5,5)
+    for(int i=-2; i<=2; i++){
+        for(int j=-2; j<=2; j++){
+            int x = 5 + i;
+            int y = 5 + j;
+            if(x>=0 && x<LINHA && y>=0 && y<COLUNA){
+                if(i==0 || j==0){
+                    if(tabuleiro[x][y]!=NAVIO)
+                        tabuleiro[x][y] = HABILIDADE;
+                }
+            }
+        }
+    }
