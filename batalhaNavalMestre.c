@@ -52,3 +52,20 @@ int main() {
             }
         }
     }
+    // Imprimindo tabuleiro com numeração
+    printf("  "); // espaço para alinhar com os números das linhas
+    for(int j=0; j<COLUNA; j++){
+        printf("%d ", j);
+    }
+    printf("\n");
+
+    for(int i=0; i<LINHA; i++){
+        printf("%d ", i); // número da linha
+        for(int j=0; j<COLUNA; j++){
+            printf("%d ", tabuleiro[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
